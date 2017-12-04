@@ -1,0 +1,172 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "04NYCjSZ6mYCabqIZzm3tJtmxb8=",
+			"path": "github.com/asaskevich/govalidator",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "n23O8UKnaSReAz/hiWVAQaE2SEU=",
+			"path": "github.com/bshuster-repo/logrus-logstash-hook",
+			"revision": "ebf008572634916f3a9433d9471a0cd3f68fc772",
+			"revisionTime": "2017-08-22T10:27:39Z"
+		},
+		{
+			"checksumSHA1": "PcdItMMwb39o55X5JulfTDLGOKE=",
+			"path": "github.com/dgrijalva/jwt-go",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "6X3O3mfvOyiwV2iAb5GjxARs08c=",
+			"path": "github.com/garyburd/redigo/internal",
+			"revision": "8873b2f1995f59d4bcdd2b0dc9858e2cb9bf0c13",
+			"revisionTime": "2016-04-14T16:28:04Z"
+		},
+		{
+			"checksumSHA1": "wEy34twsED2ydQkdOrTCpIKPsR4=",
+			"path": "github.com/garyburd/redigo/redis",
+			"revision": "8873b2f1995f59d4bcdd2b0dc9858e2cb9bf0c13",
+			"revisionTime": "2016-04-14T16:28:04Z"
+		},
+		{
+			"checksumSHA1": "XA/Y442W+yy5caVwS8AlMKH+6Cs=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "cd4cb909ce1a31435164be29bf3682031f61539a",
+			"revisionTime": "2017-11-17T11:51:24Z"
+		},
+		{
+			"checksumSHA1": "IkPM2QLv9urri7S49wzroQx9oXA=",
+			"path": "github.com/gorilla/context",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "7AHRr4QkngylbDq7fyy3VmWjPnI=",
+			"path": "github.com/gorilla/mux",
+			"revision": "18fca31550181693b3a834a15b74b564b3605876",
+			"revisionTime": "2017-05-30T19:55:47Z"
+		},
+		{
+			"checksumSHA1": "nJelTPrSAq46MKY83F/gpIVLOpw=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "0a51f6cdc55d1650d9ed3b4c13026cfa9133b01e",
+			"revisionTime": "2017-10-10T13:28:39Z"
+		},
+		{
+			"checksumSHA1": "w5/naAzcG0+g6aYx63/of1Wbgqw=",
+			"path": "github.com/jinzhu/gorm/dialects/mysql",
+			"revision": "0a51f6cdc55d1650d9ed3b4c13026cfa9133b01e",
+			"revisionTime": "2017-10-10T13:28:39Z"
+		},
+		{
+			"checksumSHA1": "tUQ1pHvWxAcPFmveZtlmCR9H4TY=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "1c35d901db3da928c72a72d8458480cc9ade058f",
+			"revisionTime": "2017-01-02T12:52:26Z"
+		},
+		{
+			"checksumSHA1": "buOT8xRnXHMG+Elhq5jcSVgQ4XU=",
+			"path": "github.com/lestrrat/go-file-rotatelogs",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "CJfJZ5hutumVFSEPOSXy5TIsnII=",
+			"path": "github.com/lestrrat/go-strftime",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "iwLqOY6Nr1BitBUex4K0Wep3JL8=",
+			"path": "github.com/pkg/errors",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "jo5zdWTO4I1OpOT0peViRHuewkg=",
+			"path": "github.com/rifflock/lfshook",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "hhV3odIET0K6zro/ixEdpbZ0bnI=",
+			"path": "github.com/rs/cors",
+			"revision": "8dd4211afb5d08dbb39a533b9bb9e4b486351df6",
+			"revisionTime": "2017-06-08T16:51:55Z"
+		},
+		{
+			"checksumSHA1": "t5W90J4d7vhrs6+LDp0BalvCZEU=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "4prQAYehufA6AeVwV1/qo1Fttx8=",
+			"path": "github.com/spf13/cast",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "mdGk/w1jcclbZDvmsdJP0/BIjQU=",
+			"path": "github.com/sunrongya/ratelimit",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "YZmYs5PV2LBVf1YQ5UnJ7yImAko=",
+			"path": "github.com/sunrongya/ratelimit/internal/clock",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "c9V7O2O5roVCT9P0+OPN9h8VoRA=",
+			"path": "github.com/unrolled/render",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "GjPpHuVg9iSFR3Lzl8EEzjCDObQ=",
+			"path": "github.com/urfave/negroni",
+			"revision": "3019daf414cfd2c51de68c3a535707c0de6e3d83",
+			"revisionTime": "2017-06-04T13:12:13Z"
+		},
+		{
+			"checksumSHA1": "ra6fAltr9m0k+y3a6wufUhYsdz8=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "BQioI7OO8xTz5F55OLNu669fMXk=",
+			"path": "golang.org/x/net/context",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "iogqujS4/+dqjXA+Yb0c1HVxnWU=",
+			"path": "golang.org/x/sys/unix",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "SSvT6z0LstNBXJ/9qyzviDZWeJs=",
+			"path": "golang.org/x/sys/windows",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "iKjOIvi+CqRe3AtbF/uq3gdPHLk=",
+			"path": "gopkg.in/olivere/elastic.v5",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "XkWc8UePu0hj5PGyPVJrGoM7AU4=",
+			"path": "gopkg.in/olivere/elastic.v5/config",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "x+ZyEkEsXKU47ycfEaegO0lxQpc=",
+			"path": "gopkg.in/olivere/elastic.v5/uritemplates",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "eGdF2GUOBchAu6mUcDp4YDZSti4=",
+			"path": "gopkg.in/sohlich/elogrus.v2",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "0eIf9S2wU7EjKgg3qGPKI+Z6RJA=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": ""
+		}
+	],
+	"rootPath": "goaccount"
+}
