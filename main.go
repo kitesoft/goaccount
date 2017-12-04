@@ -5,7 +5,6 @@ import (
 	"flag"
 	"fmt"
 
-	"math/rand"
 	"net/http"
 	"os"
 	"os/signal"
@@ -35,29 +34,10 @@ var (
 	helpLong   = flag.Bool("help", false, "Show usage text (same as -h).")
 	serverIp   = flag.String("ip", "127.0.0.1", "the server ip")
 	serverPort = flag.Int("p", 7200, "the server port")
-	configFile = flag.String("c", "config.yml", "config file")
+	configFile = flag.String("c", "config.json", "config file")
 )
 
 var srvConfig = &config.Config{}
-
-func init() {
-	if err := srvConfig.Load(*configFile); err != nil {
-		logrus.Error(err.Error())
-		panic(err.Error())
-	}
-	log.InitLog(srvConfig.Server.Name)
-	logrus.Debugf("%v", srvConfig)
-
-	var err error
-	logrus.Debugf("%s", srvConfig.MysqlConfig().String())
-	model.DB, err = gorm.Open("mysql", srvConfig.MysqlConfig().String())
-	if err != nil {
-		logrus.Debugf("error %s", err.Error())
-		panic("failed to connect database")
-	}
-
-	//	model.DB.AutoMigrate()
-}
 
 func main() {
 
@@ -67,7 +47,6 @@ func main() {
 		flag.Usage()
 		return
 	}
-	rand.Seed(time.Now().UnixNano())
 
 	pearCors := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
@@ -76,7 +55,24 @@ func main() {
 		AllowCredentials: true,
 	})
 
-	accountService := NewAccountService(
+	if err := srvConfig.Load(*configFile); err != nil {
+		logrus.Error(err.Error())
+		panic(err.Error())
+	}
+	log.InitLog(srvConfig.Server.Name)
+	logrus.Debugf("%v", srvConfig)
+
+	var err error
+	model.DB, err = gorm.Open("mysql", srvConfig.MysqlConfig().String())
+	if err != nil {
+		logrus.Debugf("error %s", err.Error())
+		panic("failed to connect database")
+	}
+
+	model.DB.AutoMigrate(&model.User{})
+	model.DB.LogMode(true)
+
+	accountService := NewService(
 		new(util.DecodeAndValidator),
 		PubJWT(srvConfig.Server.Name),
 	)
