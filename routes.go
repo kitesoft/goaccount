@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gorilla/mux"
+	"github.com/urfave/negroni"
 
 	"goaccount/server"
 )
@@ -55,6 +56,22 @@ func (s *Service) GetRoutes() []server.Route {
 			Method:      "POST",
 			Pattern:     "/{user_id:[0-9]+}/list",
 			HandlerFunc: s.list_user_handle,
+		},
+
+		server.Route{
+			Name:        "login_log",
+			Method:      "GET",
+			Pattern:     "/{user_id:[0-9]+}/log/login",
+			HandlerFunc: s.login_log_handle,
+			Middlewares: []negroni.Handler{NewTokenMiddleware(s._jwt)},
+		},
+
+		server.Route{
+			Name:        "logout",
+			Method:      "POST",
+			Pattern:     "/{user_id:[0-9]+}/logout",
+			HandlerFunc: s.logout_handle,
+			Middlewares: []negroni.Handler{NewTokenMiddleware(s._jwt)},
 		},
 	}
 }

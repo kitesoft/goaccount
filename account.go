@@ -6,6 +6,7 @@ import (
 	"goaccount/model"
 	"net/http"
 	"regexp"
+	"time"
 
 	"github.com/sirupsen/logrus"
 )
@@ -32,6 +33,17 @@ func (this *Service) login_handle(w http.ResponseWriter, r *http.Request) {
 	var errCode mixin.ErrorCode
 
 	inParam := &LoginRequest{}
+
+	defer func() {
+		model.AddLoginLog(model.LoginLog{
+			CreatedAt: time.Now().Unix(),
+			Name:      inParam.UserName,
+			Ip:        r.RemoteAddr,
+			Ua:        r.UserAgent(),
+			Result:    errCode,
+		})
+	}()
+
 	if err := this.validator.Validate(r, inParam); err != nil {
 		logrus.Errorf("[Service.login_handle] validate err: %s", err.Error())
 		this.ResponseErrCode(w, mixin.ErrorClientInvalidArgument)
@@ -145,4 +157,14 @@ func (this *Service) list_user_handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	this.ResponseOK(w, user)
+}
+
+func (this *Service) login_log_handle(w http.ResponseWriter, r *http.Request) {
+	userName := r.Form.Get("username")
+	resp := model.QueryLoginLog(userName)
+	fmt.Fprintf(w, `{"login_log":%v}`, resp)
+}
+
+func (this *Service) logout_handle(w http.ResponseWriter, r *http.Request) {
+	this.ResponseOK(w, nil)
 }

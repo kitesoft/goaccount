@@ -166,12 +166,6 @@
 			"checksumSHA1": "0eIf9S2wU7EjKgg3qGPKI+Z6RJA=",
 			"path": "gopkg.in/yaml.v2",
 			"revision": ""
-		},
-		{
-			"checksumSHA1": "tgF6ztOqJm3/vblhXXd+DihfW1E=",
-			"path": "inspect/mixin",
-			"revision": "ee9610bdc089e3d2124dd5a9abafa03d5548a241",
-			"revisionTime": "2017-11-28T11:23:55Z"
 		}
 	],
 	"rootPath": "goaccount"

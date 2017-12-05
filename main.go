@@ -72,6 +72,8 @@ func main() {
 	model.DB.AutoMigrate(&model.User{})
 	model.DB.LogMode(true)
 
+	model.Pool = srvConfig.RedisPool()
+
 	accountService := NewService(
 		new(util.DecodeAndValidator),
 		PubJWT(srvConfig.Server.Name),
