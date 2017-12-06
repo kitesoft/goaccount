@@ -30,7 +30,7 @@ func AddLoginLog(loginLog LoginLog) {
 		return
 	}
 
-	_, err = conn.Do("LTRIM", key, 0, 30)
+	_, err = conn.Do("LTRIM", key, 0, 29)
 	if err != nil {
 		logrus.Debugf("[model.AddLoginLog] redis.do %s", err.Error())
 		return

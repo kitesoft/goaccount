@@ -73,5 +73,46 @@ func (s *Service) GetRoutes() []server.Route {
 			HandlerFunc: s.logout_handle,
 			Middlewares: []negroni.Handler{NewTokenMiddleware(s._jwt)},
 		},
+
+		// 实名认证
+		server.Route{
+			Name:        "real name auth",
+			Method:      "POST",
+			Pattern:     "/{user_id:[0-9]+}/real_name_auth",
+			HandlerFunc: s.real_name_auth_handle,
+			Middlewares: []negroni.Handler{NewTokenMiddleware(s._jwt)},
+		},
+
+		server.Route{
+			Name:        "real name auth info",
+			Method:      "GET",
+			Pattern:     "/{user_id:[0-9]+}/real_name_auth",
+			HandlerFunc: s.real_name_auth_info,
+			Middlewares: []negroni.Handler{NewTokenMiddleware(s._jwt)},
+		},
+
+		server.Route{
+			Name:        "pass real name auth",
+			Method:      "POST",
+			Pattern:     "/{user_id:[0-9]+}/pass_auth",
+			HandlerFunc: s.pass_real_name_auth,
+			Middlewares: []negroni.Handler{NewAdminTokenMiddleware(s._jwt)},
+		},
+
+		server.Route{
+			Name:        "update real name auth",
+			Method:      "POST",
+			Pattern:     "/{user_id:[0-9]+}/real_name_auth/update",
+			HandlerFunc: s.update_real_name_auth,
+			Middlewares: []negroni.Handler{NewAdminTokenMiddleware(s._jwt)},
+		},
+
+		server.Route{
+			Name:        "real name list",
+			Method:      "POST",
+			Pattern:     "/{user_id:[0-9]+}/real_name_auth_list",
+			HandlerFunc: s.real_name_auth_list,
+			Middlewares: []negroni.Handler{NewAdminTokenMiddleware(s._jwt)},
+		},
 	}
 }

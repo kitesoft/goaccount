@@ -23,3 +23,16 @@ type UpdatePasswordRequest struct {
 type ResetPasswordRequest struct {
 	UserID []int `json:"user_id"`
 }
+
+type BindRequest struct {
+	LoginType string `json:"logintype"`
+	Openid    string `json:"openid"`
+	UserName  string `json:"username"`
+	Password  string `json:"password"`
+}
+
+type PassRealNameAuth struct {
+	Result  string `json:"result"`
+	Comment string `json:"comment"`
+	ID      uint   `json:"id"`
+}
